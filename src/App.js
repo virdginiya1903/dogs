@@ -1,18 +1,26 @@
 import React from "react";
 import "./App.css";
+import { fetchDog } from "./Action";
+import { connect } from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-      <button
-        onClick={() => {
-          console.log("собачка");
-        }}
-      >
-        Показать собачку
-      </button>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    console.log(this.props.url);
+    return (
+      <div>
+        <button onClick={() => fetchDog(this.props.dispatch)}>
+          Хочу собаку
+        </button>
+        <div>Здесь скоро будет картинка</div>
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  url: state.url,
+  loading: state.loading,
+  error: state.error,
+});
+
+export default connect(mapStateToProps)(App);
