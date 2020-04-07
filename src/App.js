@@ -11,7 +11,9 @@ class App extends React.Component {
         <button onClick={() => fetchDog(this.props.dispatch)}>
           Хочу собаку
         </button>
-        <div>Здесь скоро будет картинка</div>
+        <div>
+          <img src={this.props.url} alt="" />
+        </div>
       </div>
     );
   }

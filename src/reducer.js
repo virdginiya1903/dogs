@@ -1,5 +1,5 @@
 const initialState = {
-  url: "",
+  url: "https://images.dog.ceo/breeds/australian-shepherd/sadie.jpg",
   loading: false,
   error: false,
 };
