@@ -5,14 +5,24 @@ import { connect } from "react-redux";
 
 class App extends React.Component {
   render() {
-    console.log(this.props.url);
     return (
       <div>
         <button onClick={() => fetchDog(this.props.dispatch)}>
           Хочу собаку
         </button>
         <div>
-          <img src={this.props.url} alt="" />
+          {
+            this.props.loading ? (
+              <div>loading </div>
+            ) : this.props.error ? (
+              <div>error</div>
+            ) : (
+              <div>
+                <img src={this.props.url} alt="Картинка" />{" "}
+              </div>
+            )
+            // console.log(this.props.url)
+          }
         </div>
       </div>
     );
