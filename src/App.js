@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { fetchDog } from "./Action";
 import { connect } from "react-redux";
+import Icon from "./icon.js";
 
 class App extends React.Component {
   render() {
@@ -13,7 +14,7 @@ class App extends React.Component {
         <div>
           {
             this.props.loading ? (
-              <div>loading </div>
+              <Icon />
             ) : this.props.error ? (
               <div>error</div>
             ) : (
