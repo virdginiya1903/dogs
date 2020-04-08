@@ -15,7 +15,7 @@ export const reducer = (state = initialState, action) => {
 
     case "REQUESTED_SUCCESS_DOG":
       return {
-        url: action.url,
+        url: action.payload,
         loading: false,
         error: false,
       };
